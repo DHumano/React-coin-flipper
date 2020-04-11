@@ -1,36 +1,50 @@
 import React, { Component } from 'react';
 import Coin from './Coin';
-
+import { choice } from './helpers'
 class Flipper extends Component {
+    static defaultProps = {
+        coins: [
+            { side: 'heads', imgSrc: 'https://tinyurl.com/react-coin-heads-jpg' },
+            { side: 'tails', imgSrc: 'https://tinyurl.com/react-coin-tails-jpg' }
+        ]
+    }
+
     constructor(props) {
         super(props);
         this.state = {
-            side: null,
-            flips: 0,
-            heads: 0,
-            tails: 0
+            currCoin: null,
+            nFlips: 0,
+            nHeads: 0,
+            nTails: 0
         }
-        this.handleFlipper = this.handleFlipper.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
-    handleFlipper() {
-        this.setState(this.flipCoin);
+    handleClick(e) {
+        this.flipCoin();
     }
 
     flipCoin(currState) {
-        let res = Math.floor(Math.random() * 2);
-        let heads = res ? currState.heads + 1 : currState.heads;
-        let tails = !res ? currState.tails + 1 : currState.tails;
-
-        return { side: res, flips: heads + tails, heads: heads, tails: tails };
+        const newCoin = choice(this.props.coins);
+        this.setState(st => {
+            return {
+                currCoin: newCoin,
+                nFlips: st.nFlips + 1,
+                nHeads: st.nHeads + (newCoin.side === "heads" ? 1 : 0),
+                nTails: st.nTails + (newCoin.side === "tails" ? 1 : 0),
+            }
+        });
     }
 
     render() {
         return (
             <div>
-                <Coin side={this.state.side} />
-                <button onClick={this.handleFlipper}>Flip Me!</button>
-                <div>Out of {this.state.flips} flips, there have been {this.state.heads} heads and {this.state.tails} tails</div>
+                <h2>Let's flip a coin!</h2>
+                {this.state.currCoin && <Coin info={this.state.currCoin} />}
+                <button onClick={this.handleClick}>Flip Me!</button>
+                <p>
+                    Out of {this.state.nFlips} flips, there have been {this.state.nHeads}{" "}
+                 heads and {this.state.nTails} tails</p>
             </div>
         );
     }
