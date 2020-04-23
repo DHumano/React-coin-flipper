@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/React-coin-flipper/static/css/main.b6349204.chunk.css",
+    "main.js": "/React-coin-flipper/static/js/main.3dd6d2dc.chunk.js",
+    "main.js.map": "/React-coin-flipper/static/js/main.3dd6d2dc.chunk.js.map",
+    "runtime-main.js": "/React-coin-flipper/static/js/runtime-main.37df3c30.js",
+    "runtime-main.js.map": "/React-coin-flipper/static/js/runtime-main.37df3c30.js.map",
+    "static/js/2.c86959d4.chunk.js": "/React-coin-flipper/static/js/2.c86959d4.chunk.js",
+    "static/js/2.c86959d4.chunk.js.map": "/React-coin-flipper/static/js/2.c86959d4.chunk.js.map",
+    "index.html": "/React-coin-flipper/index.html",
+    "precache-manifest.8b80508d677b6e42ed02212ed09a3b34.js": "/React-coin-flipper/precache-manifest.8b80508d677b6e42ed02212ed09a3b34.js",
+    "service-worker.js": "/React-coin-flipper/service-worker.js",
+    "static/css/main.b6349204.chunk.css.map": "/React-coin-flipper/static/css/main.b6349204.chunk.css.map",
+    "static/js/2.c86959d4.chunk.js.LICENSE.txt": "/React-coin-flipper/static/js/2.c86959d4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37df3c30.js",
+    "static/js/2.c86959d4.chunk.js",
+    "static/css/main.b6349204.chunk.css",
+    "static/js/main.3dd6d2dc.chunk.js"
+  ]
+}
